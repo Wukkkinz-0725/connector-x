@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OracleSourceError",""],["OracleTypeSystem",""]],"fn":[["connect_oracle",""]],"struct":[["OracleDialect",""],["OracleSource",""],["OracleSourcePartition",""],["OracleTextSourceParser",""]]});

@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["DummySource",""],["DummySourcePartition",""],["DummySourcePartitionParser",""]]});
+initSidebarItems({"enum":[["DummyTypeSystem","This is a dummy type system used in this library. For all the sources, their output values must be one of the types defined by DummyTypeSystem. For all the destinations, they must support writing any value whose type is defined by DummyTypeSystem."]],"struct":[["DummySource",""],["DummySourcePartition",""],["DummySourcePartitionParser",""]]});
