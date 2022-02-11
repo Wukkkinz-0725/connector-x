@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MySQL &#8212; ConnectorX</title>
+    <title>Oracle &#8212; ConnectorX</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Oracle" href="oracle.html" />
-    <link rel="prev" title="MsSQL" href="mssql.html" />
+    <link rel="next" title="Postgres" href="postgres.html" />
+    <link rel="prev" title="MySQL" href="mysql.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -122,13 +122,13 @@
      MsSQL
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="mysql.html">
      MySQL
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="oracle.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Oracle
     </a>
    </li>
@@ -190,7 +190,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/databases/mysql.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/databases/oracle.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -206,11 +206,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/Wukkkinz-0725/connector-x.git"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/sfu-db/connector-x"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Wukkkinz-0725/connector-x.git/issues/new?title=Issue%20on%20page%20%2Fdatabases/mysql.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/sfu-db/connector-x/issues/new?title=Issue%20on%20page%20%2Fdatabases/oracle.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -237,13 +237,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#protocols">
-   Protocols
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mysql-pandas-type-mapping">
-   MySQL-Pandas Type Mapping
+  <a class="reference internal nav-link" href="#oracle-pandas-type-mapping">
+   Oracle-Pandas Type Mapping
   </a>
  </li>
 </ul>
@@ -256,7 +251,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>MySQL</h1>
+                <h1>Oracle</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -267,13 +262,8 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#protocols">
-   Protocols
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mysql-pandas-type-mapping">
-   MySQL-Pandas Type Mapping
+  <a class="reference internal nav-link" href="#oracle-pandas-type-mapping">
+   Oracle-Pandas Type Mapping
   </a>
  </li>
 </ul>
@@ -285,107 +275,65 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="mysql">
-<h1>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="protocols">
-<h2>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">binary</span></code>: <a class="reference external" href="https://github.com/blackbeam/rust-mysql-simple">MySQL Binary protocol</a>, recommend to use in general.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code>: <a class="reference external" href="https://github.com/blackbeam/rust-mysql-simple">MySQL Text protocol</a>, slower than <code class="docutils literal notranslate"><span class="pre">binary</span></code>, recommend to use only when <code class="docutils literal notranslate"><span class="pre">binary</span></code> protocol is not supported by the source (e.g. Clickhouse).</p></li>
-</ul>
-</div>
-<div class="section" id="mysql-pandas-type-mapping">
-<h2>MySQL-Pandas Type Mapping<a class="headerlink" href="#mysql-pandas-type-mapping" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="oracle">
+<h1>Oracle<a class="headerlink" href="#oracle" title="Permalink to this headline">¶</a></h1>
+<p>Oracle does not need to specify protocol.</p>
+<div class="section" id="oracle-pandas-type-mapping">
+<h2>Oracle-Pandas Type Mapping<a class="headerlink" href="#oracle-pandas-type-mapping" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>MySQL Type</p></th>
+<tr class="row-odd"><th class="text-align:center head"><p>Oracle Type</p></th>
 <th class="text-align:center head"><p>Pandas Type</p></th>
 <th class="text-align:center head"><p>Comment</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>TINYINT</p></td>
+<tr class="row-even"><td class="text-align:center"><p>Number(*,0)</p></td>
 <td class="text-align:center"><p>int64, Int64(nullable)</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>SMALLINT</p></td>
-<td class="text-align:center"><p>int64, Int64(nullable)</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>MEDIUMINT</p></td>
-<td class="text-align:center"><p>int64, Int64(nullable)</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>INT</p></td>
-<td class="text-align:center"><p>int64, Int64(nullable)</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>BIGINT</p></td>
-<td class="text-align:center"><p>int64, Int64(nullable)</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>FLOAT</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>Number(*,&gt;0)</p></td>
 <td class="text-align:center"><p>float64</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>DOUBLE</p></td>
+<tr class="row-even"><td class="text-align:center"><p>Float</p></td>
 <td class="text-align:center"><p>float64</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>DECIMAL</p></td>
-<td class="text-align:center"><p>float64, object(Clickhouse)</p></td>
-<td class="text-align:center"><p>Clickhouse return DECIMAL in string</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>BINARY_FLOAT</p></td>
+<td class="text-align:center"><p>float64</p></td>
+<td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>VARCHAR</p></td>
+<tr class="row-even"><td class="text-align:center"><p>BINARY_DOUBLE</p></td>
+<td class="text-align:center"><p>float64</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>VARCHAR2</p></td>
 <td class="text-align:center"><p>object</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>CHAR</p></td>
+<tr class="row-even"><td class="text-align:center"><p>CHAR</p></td>
 <td class="text-align:center"><p>object</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>DATE</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>NCHAR</p></td>
+<td class="text-align:center"><p>object</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>NVarchar2</p></td>
+<td class="text-align:center"><p>object</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>DATE</p></td>
 <td class="text-align:center"><p>datetime64[ns]</p></td>
-<td class="text-align:center"><p>only support date after year 1970</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>TIME</p></td>
-<td class="text-align:center"><p>object</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>DATETIME</p></td>
-<td class="text-align:center"><p>datetime64[ns]</p></td>
-<td class="text-align:center"><p>only support date after year 1970</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>TIMESTAMP</p></td>
+<tr class="row-even"><td class="text-align:center"><p>TIMESTAMP</p></td>
 <td class="text-align:center"><p>datetime64[ns]</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>YEAR</p></td>
-<td class="text-align:center"><p>int64, Int64(nullable)</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>TINYBLOB</p></td>
-<td class="text-align:center"><p>object</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>BLOB</p></td>
-<td class="text-align:center"><p>object</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>MEDIUMBLOB</p></td>
-<td class="text-align:center"><p>object</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>LONGBLOB</p></td>
-<td class="text-align:center"><p>object</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>JSON</p></td>
-<td class="text-align:center"><p>object</p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>ENUM</p></td>
-<td class="text-align:center"><p>object</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>TIMESTAMP WITH TIME ZONE</p></td>
+<td class="text-align:center"><p>datetime64[ns]</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
 </tbody>
@@ -418,17 +366,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="mssql.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="mysql.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">MsSQL</p>
+            <p class="prev-next-title">MySQL</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="oracle.html" title="next page">
+    <a class='right-next' id="next-link" href="postgres.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Oracle</p>
+        <p class="prev-next-title">Postgres</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -439,7 +387,7 @@
     <footer class="footer">
   <p>
     
-      By SFU-DB<br/>
+      By The Jupyter Book Community<br/>
     
         &copy; Copyright 2021.<br/>
   </p>
