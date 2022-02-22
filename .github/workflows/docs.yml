@@ -3,7 +3,7 @@ name: docs
 on:
   push:
     branches:
-      - main
+      - connectorx_doc
     # we want to run this workflow only for commits that modify the docs or workflows
     paths:
     - "docs/**"
