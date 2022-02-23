@@ -16,10 +16,17 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
 
-    - name: Set up Python 3.7
+    - name: Intall Python
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
+    
+    - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly-2021-10-21
+          components: rustfmt
+          default: true
     
     - name: Install dependencies
       run: |
@@ -53,11 +60,10 @@ jobs:
           command: doc
           args: --no-deps --features all
 
-      - name: Deploy Docs 🚀
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: target/doc # The folder the action should deploy.
-          clean-exclude: dev
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
 
   
