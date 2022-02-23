@@ -23,14 +23,6 @@ To install ConnectorX on Windows, use the following command:
 pip install connectorx
 ```
 
-## Conda
-
-To install ConnectorX via conda, use the following command:
-
-```bash
-conda install -c conda-forge connectorx
-```
-
 # Basic usage
 ConnectorX enables you to load data from databases into Python in the fastest and most memory efficient way. Here are some basic usages.
 
