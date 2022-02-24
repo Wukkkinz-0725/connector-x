@@ -6,8 +6,8 @@ on:
       - connectorx_doc
     # we want to run this workflow only for commits that modify the docs or workflows
     paths:
-    - "docs/**"
-    - .github/workflows/docs.yml
+      - "docs/**"
+      - .github/workflows/docs.yml
 
 jobs: 
   books:

@@ -4,12 +4,8 @@ on:
   push:
     branches:
       - connectorx_doc
-    # we want to run this workflow only for commits that modify the docs or workflows
-    paths:
-    - "docs/**"
-    - .github/workflows/docs.yml
 
-jobs: 
+jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +14,7 @@ jobs:
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: nightly-2021-10-21
+          toolchain: nightly-2021-11-18
           components: rustfmt
           default: true
 
@@ -28,12 +24,9 @@ jobs:
           command: doc
           args: --no-deps --features all
 
-    - name: Deploy Docs 🚀
+      - name: Deploy Docs 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: target/doc # The folder the action should deploy.
           clean-exclude: dev
-
-
-  
