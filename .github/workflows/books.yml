@@ -1,0 +1,36 @@
+name: books
+
+on:
+  push:
+    branches:
+      - connectorx_doc
+    # we want to run this workflow only for commits that modify the docs or workflows
+    paths:
+    - "docs/**"
+    - .github/workflows/docs.yml
+
+jobs: 
+  books:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
+
+    - name: Intall Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    
+    - name: Install dependencies
+      run: |
+        pip install -r docs/requirements.txt
+
+    - name: Build the book
+      run: |
+        jupyter-book build docs
+
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
+        publish_branch: test_docs
