@@ -34,7 +34,6 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
-        publish_branch: test_docs
   
   docs_rust:
     runs-on: ubuntu-latest
