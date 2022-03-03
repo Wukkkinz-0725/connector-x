@@ -9,10 +9,11 @@
 [download_badge]: https://pepy.tech/badge/connectorx
 [download_page]: https://pepy.tech/project/connectorx
 
-
 Load data from <img src="https://raw.githubusercontent.com/sfu-db/connector-x/main/assets/sources.gif" width="6.5%" style="margin-bottom: -2px"/> to <img src="https://raw.githubusercontent.com/sfu-db/connector-x/main/assets/destinations.gif" width="7%" style="margin-bottom: -2px"/>, the fastest way.
 
-ConnectorX enables you to load data from databases into Python in the fastest and most memory efficient way.
+ConnectorX enables you to load data from databases into Python in the fastest and most memory efficient way. It is a Python package that provides a high-level interface to the popular database connectors. Here is our rust documentation: 
+
+[rust-docs](/connector-x/rust-docs/connectorx/).
 
 What you need is one line of code:
 
